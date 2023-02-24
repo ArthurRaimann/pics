@@ -5,21 +5,18 @@ import ImageList from './components/ImageList';
 import searchImages from './api';
 
 function App() {
-  const [images, setImages] = useState([])
-
-  const arrayJSX = [<p>one</p>, <p>two</p>]
+  const [images, setImages] = useState([]);
 
   const handleSubmit = async (term: string) => {
     const result = await searchImages(term);
-    setImages(result)
-    console.log(result)
+    setImages(result);
+    console.log(result);
   };
 
   return (
     <div>
-      {arrayJSX}
       <SearchBar onSubmit={handleSubmit} />
-      <ImageList images={images}/>
+      <ImageList images={images} />
     </div>
   );
 }
